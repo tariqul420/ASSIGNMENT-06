@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ? Font awesome cdn -->
+    <script src="https://kit.fontawesome.com/07f60ceea9.js" crossorigin="anonymous"></script>
+
+    <!-- todo Google font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- black Html Favicon -->
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/53802153?v=4?s=400" type="image/x-icon" />
+    <title>Programming Hero: Assignment 06</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+
+  <body class="max-w-[90rem] mx-auto font-lato">
+    <!-- done nav-bar start hear -->
+    <nav class="flex items-center justify-between w-11/12 mx-auto mt-4">
+      <div class="flex gap-4">
+        <img src="images/logo.webp" alt="Logo" />
+        <h2 class="text-color-primary text-3xl font-black">Peddy</h2>
+      </div>
+      <div class="hidden md:block">
+        <ul class="flex gap-6 text-base text-color-secondary">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="">
+        <p class="w-8 h-8 flex items-center justify-center border border-solid border-[rgb(14, 122, 129, 0.9)] rounded-full cursor-pointer">
+          <i class="fa-regular fa-user"></i>
+        </p>
+      </div>
+    </nav>
+
+    <!-- done header section start hear -->
+    <header class="mt-12 flex items-center justify-center flex-col">
+      <p class="text-color-finely font-bold text-2xl text-center">Bringing Families Together ❤️‍🔥</p>
+      <h1 class="font-black text-color-primary text-6xl text-center mt-8">
+        Your Path to Adoption <br class="hidden md:block" />
+        Starts Here
+      </h1>
+      <p class="text-center mt-6 text-color-secondary font-semibold">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking <br class="hidden md:block" />
+        at its layout. The point of using Lorem Ipsum is that it has a.
+      </p>
+      <a href="#main-container"><button class="button mt-8">View More</button></a>
+      <img src="./images/pet.webp" class="mt-12" alt="Banner" />
+    </header>
+
+    <!-- done  main section start hear -->
+    <main class="mt-[6.25rem]" id="main-container">
+      <section>
+        <div>
+          <h2 class="text-color-primary font-black text-4xl text-center">Adopt Your Best Friend</h2>
+          <p class="text-color-secondary font-bold text-center mt-6">
+            It is a long established fact that a reader will be distracted by the readable content of a <br class="hidden md:block" />
+            page when looking at its layout. The point of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+
+        <!-- black category-btn-container -->
+        <div id="category-btn-container" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-12"></div>
+
+        <div class="flex items-center justify-between w-11/12 mx-auto mt-8">
+          <h3 class="font-black text-2xl text-color-primary">Best Deal For you</h3>
+          <button id="sort-by-price" class="button">Sort by Price</button>
+        </div>
+
+        <div class="w-11/12 mx-auto flex flex-col lg:flex-row gap-4 mt-8">
+          <!-- black left Side animal card container section start hear-->
+          <div id="all-animal-container" class="w-full md:w-full lg:w-[70%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+          <!-- black right Side animal card container section start hear-->
+          <div id="animalPhoto" class="w-full md:w-full lg:w-[30%] grid grid-cols-2 p-4 border border-solid border-[#1313131a] rounded-[12px] gap-4 content-start"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ? footer section stat hear -->
+    <footer class="bg-color-primary py-24 mt-8 px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="">
+        <div class="flex gap-4">
+          <img src="./images/logo.webp" alt="" />
+          <h2 class="text-white font-bold text-3xl">Peddy</h2>
+        </div>
+        <ul class="font-bold text-[#ffffff90] mt-4">
+          <li>Location: av. Washington 165, NY CA 54003</li>
+          <li>Phone: +31 85 964 47 25</li>
+          <li>Email: info@yourdomain.com</li>
+          <li>Openings hours: 9.00 AM - 5.00 PM</li>
+        </ul>
+        <div class="flex gap-6 mt-4">
+          <a class="w-12" href="#"><img src="images/facebook.png" alt="" /></a>
+          <a class="w-12" href="#"><img src="images/twitter.png" alt="" /></a>
+          <a class="w-12" href="#"><img src="images/linkedin.png" alt="" /></a>
+          <a class="w-12" href="#"><img src="images/instagram.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="">
+        <h2 class="text-white/90 font-bold text-xl">Useful Links</h2>
+        <ul class="font-bold text-[#ffffff90] mt-4">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Animals</a></li>
+          <li><a href="#">Foundation</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-white/90 font-bold text-xl">Drop a Message</h2>
+        <input type="email" placeholder="Enter your email" class="input bg-gray-800 mt-8 w-[256px]" /> <br />
+        <br />
+        <button class="btn btn-wide bg-btn-primary border-none text-white font-bold text-xl">Subscribe</button>
+      </div>
+    </footer>
+
+    <script src="./script/common.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
