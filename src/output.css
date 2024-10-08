@@ -1846,9 +1846,9 @@ html {
   padding-right: 5rem;
 }
 
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-2 {
@@ -1898,10 +1898,6 @@ html {
   line-height: 1;
 }
 
-.text-\[16px\] {
-  font-size: 16px;
-}
-
 .text-\[18px\] {
   font-size: 18px;
 }
@@ -1914,14 +1910,6 @@ html {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
-}
-
-.text-\[1px\] {
-  font-size: 1px;
 }
 
 .text-\[15px\] {
@@ -1971,6 +1959,14 @@ html {
   color: rgb(255 255 255 / 0.9);
 }
 
+.text-\[\] {
+  color: ;
+}
+
+.text-\[15\] {
+  color: 15;
+}
+
 .hover\:bg-btn-primary\/20:hover {
   background-color: rgb(14 122 129 / 0.2);
 }
@@ -2008,5 +2004,10 @@ html {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }

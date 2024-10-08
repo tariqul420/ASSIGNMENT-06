@@ -4,7 +4,6 @@ const displayBtn = async () => {
   const displayBtn = data["categories"];
 
   const allAnimalContainer = document.getElementById("all-animal-container");
-
   let lastClickBtn = null;
 
   displayBtn.map((items) => {
@@ -20,6 +19,8 @@ const displayBtn = async () => {
     `;
 
     button.addEventListener("click", () => {
+      allAnimalContainer.innerHTML = "";
+
       if (lastClickBtn) {
         lastClickBtn.classList.remove("bg-btn-primary/20", "rounded-full");
       }
@@ -27,7 +28,6 @@ const displayBtn = async () => {
       button.classList.add("bg-btn-primary/20", "rounded-full");
       lastClickBtn = button;
 
-      allAnimalContainer.innerHTML = "";
       const spinner = document.createElement("div");
       spinner.classList.add("spinner");
       allAnimalContainer.classList.remove("grid");
@@ -80,17 +80,10 @@ const allAnimalDisplay = (allData) => {
 
   sortByPriceBtn.addEventListener("click", () => {
     const sortResult = allData.sort((a, b) => b.price - a.price);
-    displayAnimalCards(sortResult);
+    allAnimalDisplay(sortResult);
   });
 
-  displayAnimalCards(allData);
-};
-
-const displayAnimalCards = (animalData) => {
-  const allAnimalContainer = document.getElementById("all-animal-container");
-  allAnimalContainer.innerHTML = "";
-
-  animalData.forEach((data) => {
+  allData.forEach((data) => {
     const { image, pet_name, breed, date_of_birth, gender, price, petId } = data;
     const card = document.createElement("div");
     card.className = "border border-solid border-[#1313131a] p-4 rounded-[12px]";
@@ -107,9 +100,9 @@ const displayAnimalCards = (animalData) => {
               </div>
               <hr class="bg-[#1313131a] mt-2">
               <div class="mt-2 flex items-center justify-between">
-                <button onclick="likeBtn(${petId})" class="text-[18px] text-btn-primary px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold"><i class="fa-regular fa-thumbs-up"></i></button>
-                <button id="adopt-btn-${petId}" onclick="adoptBtn(${petId})" class="text-[18px] text-btn-primary px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold">Adopt</button>
-                <button onclick="detailsBtn(${petId})" class="text-[18px] text-btn-primary px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold">Details</button>
+                <button onclick="likeBtn(${petId})" class="text-[18px] text-btn-primary px-5 lg:px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold"><i class="fa-regular fa-thumbs-up"></i></button>
+                <button id="adopt-btn-${petId}" onclick="adoptBtn(${petId})" class="text-[18px] text-btn-primary px-5 lg:px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold">Adopt</button>
+                <button onclick="detailsBtn(${petId})" class="text-[18px] text-btn-primary px-5 lg:px-3 py-2 border border-solid border-[rgb(14, 122, 129, 0.15)] rounded-[8px] text-xl font-bold">Details</button>
               </div>
         `;
 
@@ -142,9 +135,9 @@ const adoptBtn = async (id) => {
 
   postAllData.forEach((data) => {
     if (data.petId === id) {
-      const existingModal = document.getElementById("my_modal_1");
-      if (existingModal) {
-        existingModal.remove();
+      const beforeModal = document.getElementById("my_modal_1");
+      if (beforeModal) {
+        beforeModal.remove();
       }
 
       const adoptBtnId = document.getElementById(`adopt-btn-${id}`);
@@ -169,11 +162,11 @@ const adoptBtn = async (id) => {
       openModal.showModal();
 
       let countdown = 3;
-      const countdownText = document.getElementById("countdown");
+      const countdownId = document.getElementById("countdown");
 
       const countdownTime = setInterval(() => {
         countdown--;
-        countdownText.textContent = countdown;
+        countdownId.innerText = countdown;
 
         if (countdown === 0) {
           clearInterval(countdownTime);
@@ -191,15 +184,14 @@ const detailsBtn = async (id) => {
 
   const { image, pet_name, breed, gender, vaccinated_status, date_of_birth, price, pet_details } = petData;
 
-  const existingModal = document.getElementById("my_modal_1");
-  if (existingModal) {
-    existingModal.remove();
+  const beforeModal = document.getElementById("my_modal_1");
+  if (beforeModal) {
+    beforeModal.remove();
   }
 
   if (petData.petId === id) {
     const modal = document.createElement("div");
     modal.innerHTML = `
-      
     <dialog id="my_modal_1" class="modal">
       <div class="modal-box">
         <div>
@@ -222,7 +214,7 @@ const detailsBtn = async (id) => {
         </div>
 
         <hr class="mt-4 mb-4" />
-
+        
         <div>
           <h3 class="text-color-primary font-bold text-xl font-inter">Details Information</h3>
           <p class="text-color-secondary font-semibold">${pet_details ? pet_details : "Not Available"}</p>
