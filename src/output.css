@@ -1898,6 +1898,10 @@ html {
   line-height: 1;
 }
 
+.text-\[15px\] {
+  font-size: 15px;
+}
+
 .text-\[18px\] {
   font-size: 18px;
 }
@@ -1912,8 +1916,20 @@ html {
   line-height: 1.75rem;
 }
 
-.text-\[15px\] {
-  font-size: 15px;
+.text-\[14\.99px\] {
+  font-size: 14.99px;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
+}
+
+.text-\[1px\] {
+  font-size: 1px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .font-black {
@@ -1959,16 +1975,22 @@ html {
   color: rgb(255 255 255 / 0.9);
 }
 
-.text-\[\] {
-  color: ;
-}
-
-.text-\[15\] {
-  color: 15;
-}
-
 .hover\:bg-btn-primary\/20:hover {
   background-color: rgb(14 122 129 / 0.2);
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:flex {
+    display: flex;
+  }
+
+  .max-sm\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-sm\:gap-4 {
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
